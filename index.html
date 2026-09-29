@@ -525,6 +525,102 @@ footer span{
         font-size:15px;
     }
 }
+    @media(max-width:420px){
+
+    .hero-text h1{
+        font-size:27px;
+    }
+
+    .hero-text h3{
+        font-size:18px;
+    }
+
+    .profile{
+        width:145px;
+        height:145px;
+    }
+
+    .family-card{
+        padding:17px;
+    }
+
+    .family-card h3{
+        font-size:21px;
+    }
+
+    .family-info strong{
+        min-width:90px;
+    }
+
+    .quote{
+        font-size:15px;
+    }
+}/* ================= DARK MODE ================= */
+
+body.dark-mode{
+    background:#0b1722;
+    color:#e8f7ff;
+}
+
+body.dark-mode .about-box,
+body.dark-mode .goals{
+    background:#142534;
+    color:#e8f7ff;
+}
+
+body.dark-mode .about-box h2,
+body.dark-mode .section-title,
+body.dark-mode .family-card h3{
+    color:#e8f7ff;
+}
+
+body.dark-mode .personal{
+    background:#102b3d;
+}
+
+body.dark-mode .section-subtitle{
+    color:#b7cbd8;
+}
+
+body.dark-mode .family-card{
+    background:#142b3b;
+}
+
+body.dark-mode .family-card.mother{
+    background:#352031;
+}
+
+body.dark-mode .quote-box{
+    background:#12384c;
+    color:#54e6f2;
+}
+
+body.dark-mode .family-quote{
+    background:#173c50;
+}
+
+body.dark-mode .mother .family-quote{
+    background:#4a2638;
+    color:#ff8fc2;
+}
+
+#themeToggle{
+    border:2px solid #27e5f2;
+    background:transparent;
+    color:white;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    font-size:19px;
+    cursor:pointer;
+    margin-left:45px;
+}
+
+#themeToggle:hover{
+    background:#27e5f2;
+    color:#062c4b;
+}
+    
 </style>
 </head>
 
@@ -548,6 +644,7 @@ footer span{
         <a href="#workplace">💼 Workplace</a>
         <a href="#contact">✉ Contact</a>
     </nav>
+    <button id="themeToggle" onclick="toggleTheme()">🌙</button>
 
 </div>
 </header>
@@ -895,7 +992,21 @@ footer span{
     Personal Profile Website
 
 </footer>
+    
+<script>
+function toggleTheme(){
 
+    document.body.classList.toggle("dark-mode");
+
+    const button = document.getElementById("themeToggle");
+
+    if(document.body.classList.contains("dark-mode")){
+        button.innerHTML = "☀️";
+    }else{
+        button.innerHTML = "🌙";
+    }
+}
+</script>
 
 </body>
 </html>
